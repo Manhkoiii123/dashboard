@@ -21,6 +21,14 @@ export function middleware(request: NextRequest) {
     const dashboardUrl = new URL("/dashboard", request.url);
     return NextResponse.redirect(dashboardUrl);
   }
+  if (pathname === "/" && isLoggedIn && user) {
+    const dashboardUrl = new URL("/dashboard", request.url);
+    return NextResponse.redirect(dashboardUrl);
+  }
+  if (pathname === "/" && !isLoggedIn && !user) {
+    const signInUrl = new URL("/sign-in", request.url);
+    return NextResponse.redirect(signInUrl);
+  }
 
   return NextResponse.next();
 }
