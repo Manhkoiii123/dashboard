@@ -57,7 +57,7 @@ const SignInClient = () => {
         <CardContent>
           <Form {...form}>
             <form
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-4 mt-4"
               onSubmit={form.handleSubmit(handleSubmit)}
             >
               <FormField
@@ -97,7 +97,7 @@ const SignInClient = () => {
             </form>
           </Form>
         </CardContent>
-        <CardFooter className="justify-between">
+        <CardFooter className="justify-between mt-4">
           <span className="text-sm text-muted-foreground">
             Don&apos;t have an account?
           </span>
